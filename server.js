@@ -19,7 +19,7 @@ net.createServer(function (socket) {
 
   // Handle incoming messages from clients.
   socket.on('data', function (data) {
-    broadcast(socket.name + "> " + data, socket);
+    broadcast('\n Date: ' + new Date() + socket.name + "> " + data, socket);
   });
 
   // Remove the client from the list when it leaves
