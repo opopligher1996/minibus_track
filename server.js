@@ -1,6 +1,6 @@
 // Load the TCP Library
 const net = require('net');
-
+const fs = require('fs');
 // Keep track of the chat clients
 var clients = [];
 
@@ -19,6 +19,10 @@ net.createServer(function (socket) {
 
   // Handle incoming messages from clients.
   socket.on('data', function (data) {
+    fs.appendFile('log.txt', data, function (err) {
+      if (err) throw err;
+      console.log('Saved!');
+    });
     broadcast(socket.name + "> " + data, socket);
   });
 
