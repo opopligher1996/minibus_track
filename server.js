@@ -19,7 +19,7 @@ net.createServer(function (socket) {
 
   // Handle incoming messages from clients.
   socket.on('data', function (data) {
-    fs.appendFile('log.txt', data, function (err) {
+    fs.appendFile('log.txt', `${new Date()}: ${data} \n`, function (err) {
       if (err) throw err;
       console.log('Saved!');
     });
