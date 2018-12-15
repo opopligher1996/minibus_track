@@ -15,18 +15,17 @@ net.createServer(function (socket) {
 
   // Send a nice welcome message and announce
   socket.write("Welcome " + socket.name + "\n");
-  console.log(socket.name + " joined\n");
+  broadcast(socket.name + " joined the chat\n", socket);
 
   // Handle incoming messages from clients.
   socket.on('data', function (data) {
-    console.log('\n Date: ' + new Date() + socket.name + "> " + data);
+    broadcast(socket.name + "> " + data, socket);
   });
 
   // Remove the client from the list when it leaves
   socket.on('end', function () {
     clients.splice(clients.indexOf(socket), 1);
-    console.log(socket.name + " left");
-    // broadcast(socket.name + " left the chat.\n");
+    broadcast(socket.name + " left the chat.\n");
   });
 
   // Send a message to all clients
