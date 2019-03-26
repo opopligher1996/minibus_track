@@ -1,0 +1,24 @@
+{
+  "name": "minibus_track",
+  "version": "1.0.0",
+  "description": "",
+  "main": "parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seeseesky/minibus_track.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seeseesky/minibus_track/issues"
+  },
+  "homepage": "https://github.com/seeseesky/minibus_track#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
